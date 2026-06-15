@@ -111,7 +111,6 @@ The system supports product purchases, installment plans, payments tracking, and
 
 ## 📸 Screenshots
 
-> (ضع صور من مشروعك داخل مجلد `public/screenshots`)
 
 ### Dashboard
 
