@@ -12,7 +12,7 @@
     <div class="relative z-10 max-w-7xl mx-auto px-6 py-16">
 
         <!-- Hero -->
-        <div class="text-center mb-16">
+        <div class="text-center mb-12">
             <div class="inline-flex items-center gap-2 bg-white/10 border border-white/10 backdrop-blur-xl px-5 py-2 rounded-full text-emerald-300 text-sm mb-6 shadow-lg">
                 <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
                 منصة الشركاء المعتمدين
@@ -28,15 +28,14 @@
             </p>
         </div>
 
-        <!-- Cards -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Auth Card Container -->
+        <div class="max-w-2xl mx-auto relative group">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
 
-            <!-- Login Card -->
-            <div class="relative group">
-                <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-
-                <div class="relative bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 shadow-2xl">
-
+            <div class="relative bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+                
+                <!-- 1. LOGIN SECTION -->
+                <div id="login-section" class="transition-all duration-300">
                     <div class="flex items-center justify-between mb-8">
                         <div>
                             <h2 class="text-3xl font-black text-white">
@@ -46,7 +45,6 @@
                                 ادخل إلى لوحة التحكم الخاصة بمتجرك
                             </p>
                         </div>
-
                         <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-3xl shadow-lg">
                             🛒
                         </div>
@@ -59,7 +57,6 @@
                             <label class="block text-sm text-slate-200 mb-2">
                                 اسم المتجر
                             </label>
-
                             <input
                                 type="text"
                                 name="store_name"
@@ -73,7 +70,6 @@
                             <label class="block text-sm text-slate-200 mb-2">
                                 رقم السجل التجاري
                             </label>
-
                             <input
                                 type="text"
                                 name="commercial_reg"
@@ -90,27 +86,30 @@
                             دخول التاجر
                         </button>
                     </form>
+
+                    <!-- Switch to Register Link -->
+                    <div class="text-center mt-8 pt-6 border-t border-white/10">
+                        <p class="text-slate-300">
+                            ليس لديك حساب تاجر معنا؟ 
+                            <button onclick="toggleAuth('register')" class="text-emerald-400 font-bold hover:underline focus:outline-none mr-1">
+                                إنشاء حساب جديد الآن
+                            </button>
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Register Card -->
-            <div class="relative group">
-                <div class="absolute inset-0 bg-gradient-to-r from-slate-700 to-slate-900 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-
-                <div class="relative bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 shadow-2xl">
-
+                <!-- 2. REGISTER SECTION (Hidden by default) -->
+                <div id="register-section" class="hidden transition-all duration-300">
                     <div class="flex items-center justify-between mb-8">
                         <div>
                             <h2 class="text-3xl font-black text-white">
                                 إنشاء حساب جديد
                             </h2>
-
                             <p class="text-slate-300 mt-2">
                                 انضم إلى شبكة التجار المعتمدين
                             </p>
                         </div>
-
-                        <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl shadow-lg">
+                        <div class="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-3xl shadow-lg">
                             ✨
                         </div>
                     </div>
@@ -122,7 +121,6 @@
                             <label class="block text-sm text-slate-200 mb-2">
                                 اسم المتجر
                             </label>
-
                             <input
                                 type="text"
                                 name="store_name"
@@ -136,7 +134,6 @@
                             <label class="block text-sm text-slate-200 mb-2">
                                 رقم السجل التجاري
                             </label>
-
                             <input
                                 type="text"
                                 name="commercial_reg"
@@ -150,7 +147,6 @@
                             <label class="block text-sm text-slate-200 mb-2">
                                 رقم الهاتف
                             </label>
-
                             <input
                                 type="text"
                                 name="phone"
@@ -164,7 +160,6 @@
                             <label class="block text-sm text-slate-200 mb-2">
                                 رقم الحساب البنكي
                             </label>
-
                             <input
                                 type="text"
                                 name="bank_account_number"
@@ -181,14 +176,23 @@
                             تقديم طلب التسجيل
                         </button>
                     </form>
-                </div>
-            </div>
 
+                    <!-- Switch to Login Link -->
+                    <div class="text-center mt-8 pt-6 border-t border-white/10">
+                        <p class="text-slate-300">
+                            لديك حساب بالفعل؟ 
+                            <button onclick="toggleAuth('login')" class="text-cyan-400 font-bold hover:underline focus:outline-none mr-1">
+                                تسجيل الدخول
+                            </button>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <!-- Bottom Stats -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-
             <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 text-center">
                 <h3 class="text-4xl font-black text-white">24/7</h3>
                 <p class="text-slate-300 mt-2">دعم ومتابعة مستمرة</p>
@@ -203,9 +207,24 @@
                 <h3 class="text-4xl font-black text-cyan-400">100%</h3>
                 <p class="text-slate-300 mt-2">حماية وأمان للمعاملات</p>
             </div>
-
         </div>
 
     </div>
 </div>
+
+<!-- JavaScript السلس للتنقل بين الواجهتين بدون تحديث الصفحة -->
+<script>
+    function toggleAuth(view) {
+        const loginSection = document.getElementById('login-section');
+        const registerSection = document.getElementById('register-section');
+
+        if (view === 'register') {
+            loginSection.classList.add('hidden');
+            registerSection.classList.remove('hidden');
+        } else {
+            registerSection.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+        }
+    }
+</script>
 @endsection
